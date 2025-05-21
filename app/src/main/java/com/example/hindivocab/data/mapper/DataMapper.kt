@@ -11,7 +11,8 @@ fun VocabWordEntity.toDomain(): VocabWord =
         meaning = meaning ?: "",
         isSaved = isSaved == true,
         partOfSpeech = partOfSpeech ?: PartOfSpeech.OTHER,
+        hasBeenShown = hasBeenShown == true,
     )
 
 fun VocabWord.toEntity(): VocabWordEntity =
-    VocabWordEntity(id, hindiWord, meaning, isSaved, partOfSpeech)
+    VocabWordEntity(id, hindiWord, meaning, isSaved, partOfSpeech, hasBeenShown)

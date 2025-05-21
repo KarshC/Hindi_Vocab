@@ -7,8 +7,9 @@ import com.example.hindivocab.domain.model.VocabWord
 import com.example.hindivocab.domain.repo.VocabWordRepo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-class VocabWordRepoImpl(
+class VocabWordRepoImpl @Inject constructor(
     private val dao: VocabWordDao
 ): VocabWordRepo {
     override fun getAllWords(): Flow<List<VocabWord>> =

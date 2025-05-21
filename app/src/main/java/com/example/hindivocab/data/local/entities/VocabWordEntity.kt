@@ -12,4 +12,5 @@ data class VocabWordEntity(
     val meaning: String?,
     val isSaved: Boolean?,
     val partOfSpeech: PartOfSpeech?,
+    val hasBeenShown: Boolean?
 )

@@ -8,5 +8,6 @@ val PREVIEW_WORD = VocabWord(
     hindiWord = "पुस्तक",
     meaning = "Book",
     isSaved = true,
-    partOfSpeech = PartOfSpeech.NOUN
+    partOfSpeech = PartOfSpeech.NOUN,
+    hasBeenShown = false
 )
