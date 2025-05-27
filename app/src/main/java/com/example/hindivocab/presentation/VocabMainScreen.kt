@@ -13,30 +13,43 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.hindivocab.presentation.views.FlipCardScreen
+import com.example.hindivocab.presentation.views.SavedWordsScreen
 
 @Composable
-fun VocabMainScreen(viewModel: VocabViewModel = hiltViewModel()) {
-    val uiState by viewModel.uiState.collectAsState()
+fun VocabMainScreen() {
+    val viewModel: VocabViewModel = hiltViewModel()
+    val state by viewModel.uiState.collectAsState()
 
-    // Show loading or error
     when {
-        uiState.isLoading -> {
-            LoadingScreen()
-        }
+        state.isLoading -> LoadingScreen()
+        state.error != null -> ErrorScreen(state.error ?: "Unknown Error")
+        else -> when (state.currentScreen) {
+            Screen.MAIN -> {
+                state.currentWord?.let {
+                    FlipCardScreen(
+                        word = it,
+                        isFlipped = state.isFlipped,
+                        onCardClick = { viewModel.onFlipCard() },
+                        onSaveToggle = { viewModel.onToggleSave() },
+                        onNext = { viewModel.onNextWord() },
+                        onBack = { viewModel.onPreviousWord() }
+                    )
+                }
+            }
 
-        uiState.error != null -> {
-            ErrorScreen(message = uiState.error!!)
-        }
+            Screen.SAVED -> {
+                if (state.savedWords.isEmpty()) {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text("No saved words yet.")
+                    }
+                } else {
+                    SavedWordsScreen(words = state.savedWords)
+                }
+            }
 
-        uiState.currentWord != null -> {
-            FlipCardScreen(
-                word = uiState.currentWord!!,
-                isFlipped = uiState.isFlipped,
-                onCardClick = { viewModel.onFlipCard() },
-                onSaveToggle = { viewModel.onToggleSave() },
-                onNext = { viewModel.onNextWord() },
-                onBack = { viewModel.onPreviousWord() }
-            )
+            Screen.All -> {
+                SavedWordsScreen(state.)
+            }
         }
     }
 }

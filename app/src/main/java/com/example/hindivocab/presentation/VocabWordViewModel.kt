@@ -21,7 +21,10 @@ class VocabViewModel @Inject constructor(
     private var wordList: List<VocabWord> = emptyList()
     private var currentIndex = 0
 
-    init { loadWords() }
+    init {
+        loadWords()
+        savedWords()
+    }
 
     private fun loadWords() {
         viewModelScope.launch {
@@ -35,6 +38,18 @@ class VocabViewModel @Inject constructor(
                 )
             }
         }
+    }
+
+    private fun savedWords() {
+        viewModelScope.launch {
+            useCases.getAllSavedWordsUseCase().collect { words ->
+                _uiState.value = _uiState.value.copy(savedWords = words)
+            }
+        }
+    }
+
+    fun setScreen(screen: Screen) {
+        _uiState.value = _uiState.value.copy(currentScreen = screen)
     }
 
     fun onFlipCard() {

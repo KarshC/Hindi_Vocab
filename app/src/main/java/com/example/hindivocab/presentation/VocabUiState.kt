@@ -6,5 +6,13 @@ data class VocabUiState(
     val currentWord: VocabWord? = null,
     val isFlipped: Boolean = false,
     val isLoading: Boolean = true,
-    val error: String? = null
+    val error: String? = null,
+    val savedWords: List<VocabWord> = emptyList(),
+    val currentScreen: Screen = Screen.MAIN
 )
+
+enum class Screen {
+    MAIN,
+    All,
+    SAVED
+}
