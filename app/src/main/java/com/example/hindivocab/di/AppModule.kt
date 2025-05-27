@@ -8,9 +8,11 @@ import com.example.hindivocab.data.local.database.VocabDatabase
 import com.example.hindivocab.data.remote.HindiWordsDataSource
 import com.example.hindivocab.data.repoImpl.VocabWordRepoImpl
 import com.example.hindivocab.domain.repo.VocabWordRepo
+import com.example.hindivocab.domain.usecase.GetAllSavedWordsUseCase
 import com.example.hindivocab.domain.usecase.GetAllWordsUseCase
 import com.example.hindivocab.domain.usecase.InitializeWordsUseCase
 import com.example.hindivocab.domain.usecase.SaveWordUseCase
+import com.example.hindivocab.domain.usecase.SyncWithJsonUseCase
 import com.example.hindivocab.domain.usecase.VocabWordUseCases
 import com.google.gson.Gson
 import dagger.Module
@@ -47,7 +49,9 @@ object AppModule {
         return VocabWordUseCases(
             getAllWordsUseCase = GetAllWordsUseCase(repository),
             saveWordUseCase = SaveWordUseCase(repository),
-            initializeWordsUseCase = InitializeWordsUseCase(repository)
+            initializeWordsUseCase = InitializeWordsUseCase(repository),
+            syncWithJsonUseCase = SyncWithJsonUseCase(repository),
+            getAllSavedWordsUseCase = GetAllSavedWordsUseCase(repository)
         )
     }
 

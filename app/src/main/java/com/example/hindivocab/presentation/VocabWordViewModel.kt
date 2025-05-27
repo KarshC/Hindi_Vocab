@@ -25,6 +25,8 @@ class VocabViewModel @Inject constructor(
 
     private fun loadWords() {
         viewModelScope.launch {
+            useCases.initializeWordsUseCase()
+
             useCases.getAllWordsUseCase().collect { words ->
                 wordList = words.shuffled()
                 _uiState.value = _uiState.value.copy(

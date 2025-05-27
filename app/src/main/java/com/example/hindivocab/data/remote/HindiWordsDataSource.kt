@@ -18,7 +18,7 @@ class HindiWordsDataSource @Inject constructor(
 ) {
     suspend fun loadWords(): List<VocabWord> = withContext(Dispatchers.IO) {
         try {
-            val jsonString = context.assets.open("final_vocab_words.json").bufferedReader().use { it.readText() }
+            val jsonString = context.assets.open("vocab_words.json").bufferedReader().use { it.readText() }
             val type = object : TypeToken<List<JsonVocabWord>>() {}.type
             val jsonList: List<JsonVocabWord> = gson.fromJson(jsonString, type)
             jsonList.mapIndexed { index, jsonWord ->
