@@ -5,7 +5,10 @@ import androidx.room.RoomDatabase
 import com.example.hindivocab.data.local.dao.VocabWordDao
 import com.example.hindivocab.data.local.entities.VocabWordEntity
 
-@Database(entities = [VocabWordEntity::class], version = 1, exportSchema = false)
+@Database(
+    entities = [VocabWordEntity::class],
+    version = 2,
+    exportSchema = false)
 abstract class VocabDatabase: RoomDatabase() {
     abstract fun vocabWordDao(): VocabWordDao
 }

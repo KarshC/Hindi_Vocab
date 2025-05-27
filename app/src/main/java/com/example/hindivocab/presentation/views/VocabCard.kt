@@ -4,7 +4,10 @@ package com.example.hindivocab.presentation.views
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -65,12 +68,24 @@ fun VocabCard(
         contentAlignment = Alignment.Center
     ) {
         if (rotation.value <= 90f) {
-            Text(
-                text = word.hindiWord,
-                style = MaterialTheme.typography.headlineLarge,
-                color = Color.Black,
-                textAlign = TextAlign.Center
-            )
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = word.hindiWord,
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = Color.Black,
+                    textAlign = TextAlign.Center
+                )
+                Text(
+                    text = word.hinglishWord,
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = Color.Black,
+                    textAlign = TextAlign.Center
+                )
+            }
         } else {
             Text(
                 text = word.meaning,

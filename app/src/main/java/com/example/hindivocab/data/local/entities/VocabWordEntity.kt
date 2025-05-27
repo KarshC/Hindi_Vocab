@@ -9,6 +9,7 @@ data class VocabWordEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val hindiWord: String?,
+    val highlishWord: String?,
     val meaning: String?,
     val isSaved: Boolean?,
     val partOfSpeech: PartOfSpeech?,

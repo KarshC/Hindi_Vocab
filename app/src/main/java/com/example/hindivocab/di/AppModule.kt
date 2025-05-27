@@ -1,17 +1,22 @@
 package com.example.hindivocab.di
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import com.example.hindivocab.data.local.dao.VocabWordDao
 import com.example.hindivocab.data.local.database.VocabDatabase
+import com.example.hindivocab.data.remote.HindiWordsDataSource
 import com.example.hindivocab.data.repoImpl.VocabWordRepoImpl
 import com.example.hindivocab.domain.repo.VocabWordRepo
 import com.example.hindivocab.domain.usecase.GetAllWordsUseCase
+import com.example.hindivocab.domain.usecase.InitializeWordsUseCase
 import com.example.hindivocab.domain.usecase.SaveWordUseCase
 import com.example.hindivocab.domain.usecase.VocabWordUseCases
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -34,14 +39,32 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRepository(dao: VocabWordDao): VocabWordRepo = VocabWordRepoImpl(dao)
+    fun provideRepository(dao: VocabWordDao, dataSource: HindiWordsDataSource): VocabWordRepo = VocabWordRepoImpl(dao, dataSource)
 
     @Provides
     @Singleton
     fun provideVocabUseCases(repository: VocabWordRepo): VocabWordUseCases {
         return VocabWordUseCases(
             getAllWordsUseCase = GetAllWordsUseCase(repository),
-            saveWordUseCase = SaveWordUseCase(repository)
+            saveWordUseCase = SaveWordUseCase(repository),
+            initializeWordsUseCase = InitializeWordsUseCase(repository)
         )
+    }
+
+    @Provides
+    @Singleton
+    fun provideGson(): Gson = Gson()
+
+    @Provides
+    @Singleton
+    fun provideAppContext(@ApplicationContext context: Context): Context = context
+
+    @Provides
+    @Singleton
+    fun provideHindiWordsDataSource(
+        @ApplicationContext context: Context,
+        gson: Gson
+    ): HindiWordsDataSource {
+        return HindiWordsDataSource(context, gson)
     }
 }

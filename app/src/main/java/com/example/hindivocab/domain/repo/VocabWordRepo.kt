@@ -12,4 +12,6 @@ interface VocabWordRepo {
     suspend fun insertWords(words: List<VocabWord>)
     suspend fun updateWord(word: VocabWord)
     suspend fun deleteWord(word: VocabWord)
+    suspend fun loadWords()
+    suspend fun syncWithJson()
 }

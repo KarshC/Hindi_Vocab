@@ -35,4 +35,11 @@ interface VocabWordDao {
 
     @Query("SELECT * FROM vocab_words ORDER BY RANDOM() LIMIT 1")
     suspend fun getRandomWord(): VocabWordEntity?
+
+    @Query("SELECT COUNT(*) FROM vocab_words")
+    suspend fun countWords(): Int
+
+    @Query("SELECT * FROM vocab_words")
+    suspend fun getAllWordsOnce(): List<VocabWordEntity>
+
 }
