@@ -86,7 +86,7 @@ class MainActivity : ComponentActivity() {
                         }
                     ) { innerPadding ->
                         Box(modifier = Modifier.padding(innerPadding)) {
-                            VocabMainScreen()
+                            VocabMainScreen(viewModel)
                         }
                     }
                 }

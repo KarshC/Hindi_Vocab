@@ -10,14 +10,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.hindivocab.presentation.views.FlipCardScreen
-import com.example.hindivocab.presentation.views.SavedWordsScreen
+import com.example.hindivocab.presentation.views.WordsListScreen
 
 @Composable
-fun VocabMainScreen() {
-    val viewModel: VocabViewModel = hiltViewModel()
+fun VocabMainScreen(viewModel: VocabViewModel) {
     val state by viewModel.uiState.collectAsState()
 
     when {
@@ -30,7 +27,7 @@ fun VocabMainScreen() {
                         word = it,
                         isFlipped = state.isFlipped,
                         onCardClick = { viewModel.onFlipCard() },
-                        onSaveToggle = { viewModel.onToggleSave() },
+                        onSaveToggle = { viewModel.onToggleSave(it) },
                         onNext = { viewModel.onNextWord() },
                         onBack = { viewModel.onPreviousWord() }
                     )
@@ -43,12 +40,20 @@ fun VocabMainScreen() {
                         Text("No saved words yet.")
                     }
                 } else {
-                    SavedWordsScreen(words = state.savedWords)
+                    WordsListScreen(
+                        words = state.savedWords,
+                        savedWords = true,
+                        onToggleSave = { viewModel.onToggleSave(it) }
+                    )
                 }
             }
 
             Screen.All -> {
-                SavedWordsScreen(state.)
+                WordsListScreen(
+                    words = state.allWords,
+                    savedWords = false,
+                    onToggleSave = { viewModel.onToggleSave(it) }
+                )
             }
         }
     }
@@ -66,10 +71,4 @@ fun ErrorScreen(message: String) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(text = "Error: $message", style = MaterialTheme.typography.headlineMedium, color = Color.Red)
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewVocabMainScreen() {
-    VocabMainScreen()
 }

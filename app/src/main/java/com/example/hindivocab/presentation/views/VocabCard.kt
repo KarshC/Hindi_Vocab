@@ -32,9 +32,9 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.hindivocab.domain.model.PartOfSpeech
 import com.example.hindivocab.domain.model.VocabWord
 import com.example.hindivocab.presentation.PREVIEW_WORD
+import com.example.hindivocab.utils.Utils
 
 
 @Composable
@@ -114,26 +114,13 @@ fun VocabCard(
     }
 }
 
-
-
-fun getCardColor(partOfSpeech: PartOfSpeech?): Color {
-    return when (partOfSpeech) {
-        PartOfSpeech.NOUN -> Color(0xFFBBDEFB)       // Light Blue
-        PartOfSpeech.VERB -> Color(0xFFA5D6A7)       // Light Green
-        PartOfSpeech.ADJECTIVE -> Color(0xFFFFF59D)  // Light Yellow
-        PartOfSpeech.ADVERB -> Color(0xFFE1BEE7)     // Light Purple
-        PartOfSpeech.PREPOSITION -> Color(0xFFFFCCBC) // Light Orange
-        PartOfSpeech.OTHER, null -> Color(0xFFD7CCC8) // Default Beige
-    }
-}
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun FlipCardPreview() {
     VocabCard(
         word = PREVIEW_WORD,
         isFlipped = false,
-        cardColor = getCardColor(PREVIEW_WORD.partOfSpeech),
+        cardColor = Utils().getCardColor(PREVIEW_WORD.partOfSpeech),
         onClick = {  },
         onSaveToggle = { },
     )

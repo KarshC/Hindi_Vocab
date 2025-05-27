@@ -29,16 +29,23 @@ class VocabViewModel @Inject constructor(
     private fun loadWords() {
         viewModelScope.launch {
             useCases.initializeWordsUseCase()
+            useCases.syncWithJsonUseCase() // Include if needed
 
             useCases.getAllWordsUseCase().collect { words ->
-                wordList = words.shuffled()
-                _uiState.value = _uiState.value.copy(
-                    currentWord = wordList.getOrNull(currentIndex),
-                    isLoading = false
-                )
+                if (wordList.isEmpty()) {
+                    wordList = words.shuffled()
+                    _uiState.value = _uiState.value.copy(
+                        currentWord = wordList.getOrNull(currentIndex),
+                        isLoading = false,
+                        allWords = words
+                    )
+                } else {
+                    _uiState.value = _uiState.value.copy(allWords = words)
+                }
             }
         }
     }
+
 
     private fun savedWords() {
         viewModelScope.launch {
@@ -76,16 +83,33 @@ class VocabViewModel @Inject constructor(
         }
     }
 
-    fun onToggleSave() {
-        _uiState.value.currentWord?.let { word ->
-            viewModelScope.launch {
-                val updated = word.copy(isSaved = !word.isSaved)
-                useCases.saveWordUseCase(updated)
-                wordList = wordList.toMutableList().apply {
-                    this[currentIndex] = updated
-                }
+    fun onToggleSave(word: VocabWord) {
+        viewModelScope.launch {
+            val updated = word.copy(isSaved = !word.isSaved)
+            useCases.saveWordUseCase(updated)
+
+            // If this is the currentWord, update it too
+            if (_uiState.value.currentWord?.id == updated.id) {
                 _uiState.value = _uiState.value.copy(currentWord = updated)
             }
+
+            // Force update savedWords list for immediate UI feedback
+            val updatedSaved = if (updated.isSaved) {
+                _uiState.value.savedWords + updated
+            } else {
+                _uiState.value.savedWords.filterNot { it.id == updated.id }
+            }
+
+            val updatedAll = _uiState.value.allWords.map {
+                if (it.id == updated.id) updated else it
+            }
+
+            _uiState.value = _uiState.value.copy(
+                savedWords = updatedSaved,
+                allWords = updatedAll
+            )
         }
     }
+
+
 }

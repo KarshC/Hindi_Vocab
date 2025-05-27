@@ -8,7 +8,8 @@ data class VocabUiState(
     val isLoading: Boolean = true,
     val error: String? = null,
     val savedWords: List<VocabWord> = emptyList(),
-    val currentScreen: Screen = Screen.MAIN
+    val currentScreen: Screen = Screen.MAIN,
+    val allWords: List<VocabWord> = emptyList()
 )
 
 enum class Screen {

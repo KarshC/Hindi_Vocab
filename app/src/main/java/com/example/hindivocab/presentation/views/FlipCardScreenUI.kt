@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hindivocab.domain.model.VocabWord
 import com.example.hindivocab.presentation.PREVIEW_WORD
+import com.example.hindivocab.utils.Utils
 
 @Composable
 fun FlipCardScreen(
@@ -30,9 +31,9 @@ fun FlipCardScreen(
     onNext: () -> Unit,
     onBack: () -> Unit
 ) {
-    val backgroundColor = getCardColor(word.partOfSpeech).copy(alpha = 0.5f)
-    val cardColor = getCardColor(word.partOfSpeech)
-
+    val baseCardColor = Utils().getCardColor(word.partOfSpeech)
+    val backgroundColor = baseCardColor.copy(alpha = 0.5f)
+    val cardColor = baseCardColor
     Box(
         modifier = Modifier
             .fillMaxSize()
