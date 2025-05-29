@@ -40,13 +40,13 @@ fun VocabMainScreen(viewModel: VocabViewModel) {
             }
 
             Screen.SAVED -> {
-                if (state.savedWords.isEmpty()) {
+                if (state.filteredWords.isEmpty()) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        Text("No saved words yet.")
+                        Text("No saved words match this filter.")
                     }
                 } else {
                     WordsListScreen(
-                        words = state.savedWords,
+                        words = state.filteredWords,
                         savedWords = true,
                         onToggleSave = { viewModel.onToggleSave(it) }
                     )
@@ -54,12 +54,19 @@ fun VocabMainScreen(viewModel: VocabViewModel) {
             }
 
             Screen.All -> {
-                WordsListScreen(
-                    words = state.allWords,
-                    savedWords = false,
-                    onToggleSave = { viewModel.onToggleSave(it) }
-                )
+                if (state.filteredWords.isEmpty()) {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text("No words match this filter.")
+                    }
+                } else {
+                    WordsListScreen(
+                        words = state.filteredWords,
+                        savedWords = true,
+                        onToggleSave = { viewModel.onToggleSave(it) }
+                    )
+                }
             }
+
         }
     }
 }

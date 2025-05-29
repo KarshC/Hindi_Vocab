@@ -1,7 +1,9 @@
 package com.example.hindivocab.presentation.views
 
 
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -47,10 +49,11 @@ fun VocabCard(
 ) {
     val rotation = animateFloatAsState(
         targetValue = if (isFlipped) 180f else 0f,
+        animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing),
         label = "CardFlip"
     )
 
-    val cameraDistance = 30f * LocalDensity.current.density
+    val cameraDistance = 32f * LocalDensity.current.density
 
     Box(
         modifier = Modifier
@@ -74,13 +77,13 @@ fun VocabCard(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = word.hindiWord,
+                    text = word.hinglishWord,
                     style = MaterialTheme.typography.headlineLarge,
                     color = Color.Black,
                     textAlign = TextAlign.Center
                 )
                 Text(
-                    text = word.hinglishWord,
+                    text = word.hindiWord,
                     style = MaterialTheme.typography.headlineLarge,
                     color = Color.Black,
                     textAlign = TextAlign.Center

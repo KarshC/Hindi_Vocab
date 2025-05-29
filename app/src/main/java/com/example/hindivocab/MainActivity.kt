@@ -91,7 +91,7 @@ class MainActivity : ComponentActivity() {
                     ) { innerPadding ->
                         Column(modifier = Modifier.padding(innerPadding)) {
                             // ✅ Only show filter chips on MAIN screen
-                            if (state.currentScreen == Screen.MAIN) {
+                            if (state.currentScreen in listOf(Screen.MAIN, Screen.SAVED, Screen.All)) {
                                 FilterChipsRow(
                                     selectedFilter = state.selectedFilter,
                                     onFilterSelected = { viewModel.setFilter(it) }

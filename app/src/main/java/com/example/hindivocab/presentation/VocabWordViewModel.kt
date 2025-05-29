@@ -62,6 +62,7 @@ class VocabViewModel @Inject constructor(
 
     fun setScreen(screen: Screen) {
         _uiState.value = _uiState.value.copy(currentScreen = screen)
+        applyFilterToCurrentScreen()
     }
 
     fun onFlipCard() {
@@ -118,20 +119,32 @@ class VocabViewModel @Inject constructor(
 
     fun setFilter(filter: PartOfSpeech?) {
         _uiState.value = _uiState.value.copy(selectedFilter = filter)
+        applyFilterToCurrentScreen()
+    }
 
-        val filtered = if (filter != null) {
-            _uiState.value.allWords.filter { it.partOfSpeech == filter }
-        } else {
-            _uiState.value.allWords
+    private fun applyFilterToCurrentScreen() {
+        val filter = _uiState.value.selectedFilter
+        val source = when (_uiState.value.currentScreen) {
+            Screen.SAVED -> _uiState.value.savedWords
+            Screen.All -> _uiState.value.allWords
+            else -> _uiState.value.allWords
         }
 
-        wordList = filtered.shuffled()
-        currentIndex = 0
+        val filtered = if (filter != null) {
+            source.filter { it.partOfSpeech == filter }
+        } else {
+            source
+        }
 
-        _uiState.value = _uiState.value.copy(
-            currentWord = wordList.getOrNull(currentIndex),
-            isFlipped = false // optional: reset flip on new filter
-        )
+        _uiState.value = _uiState.value.copy(filteredWords = filtered)
+
+        if (_uiState.value.currentScreen == Screen.MAIN) {
+            wordList = filtered.shuffled()
+            currentIndex = 0
+            _uiState.value = _uiState.value.copy(currentWord = wordList.getOrNull(currentIndex))
+        }
     }
+
+
 
 }
