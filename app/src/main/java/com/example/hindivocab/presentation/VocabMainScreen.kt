@@ -46,7 +46,7 @@ fun VocabMainScreen(viewModel: VocabViewModel) {
                     }
                 } else {
                     WordsListScreen(
-                        words = state.filteredWords,
+                        words = state.filteredWords.shuffled(),
                         savedWords = true,
                         onToggleSave = { viewModel.onToggleSave(it) }
                     )
@@ -60,7 +60,7 @@ fun VocabMainScreen(viewModel: VocabViewModel) {
                     }
                 } else {
                     WordsListScreen(
-                        words = state.filteredWords,
+                        words = state.filteredWords.shuffled(),
                         savedWords = true,
                         onToggleSave = { viewModel.onToggleSave(it) }
                     )
