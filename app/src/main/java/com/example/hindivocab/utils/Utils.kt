@@ -6,16 +6,16 @@ import com.example.hindivocab.domain.model.PartOfSpeech
 class Utils {
     fun getCardColor(partOfSpeech: PartOfSpeech?): Color {
         return when (partOfSpeech) {
-            PartOfSpeech.NOUN -> Color(0xFF64B5F6)        // Better blue
-            PartOfSpeech.VERB -> Color(0xFF81C784)        // Vibrant green
-            PartOfSpeech.ADJECTIVE -> Color(0xFFFFD54F)   // Strong yellow
-            PartOfSpeech.ADVERB -> Color(0xFFBA68C8)      // Medium purple
-            PartOfSpeech.PREPOSITION -> Color(0xFFFF8A65) // Orange/coral
-            PartOfSpeech.OTHER, null -> Color(0xFFBCAAA4) // Soft beige/gray
-            PartOfSpeech.QUESTION -> Color(0xFF4DD0E1)     // Bright teal (easy to read, attention-grabbing)
-            PartOfSpeech.NUMBER -> Color(0xFFA1887F)       // Muted brown (earthy, consistent with logic)
-            PartOfSpeech.TIME -> Color(0xFF9575CD)         // Soft violet (subtle, calming for time context)
-            PartOfSpeech.WEATHER -> Color(0xFF4FC3F7)      // Sky blue (evokes natural weather elements)
+            PartOfSpeech.NOUN -> Color(0xFF42A5F5)        // Vibrant blue
+            PartOfSpeech.VERB -> Color(0xFF66BB6A)        // Fresh green
+            PartOfSpeech.ADJECTIVE -> Color(0xFFFF7043)   // Deep orange
+            PartOfSpeech.ADVERB -> Color(0xFFAB47BC)      // Rich purple
+            PartOfSpeech.PREPOSITION -> Color(0xFFFFCA28) // Golden yellow
+            PartOfSpeech.QUESTION -> Color(0xFF26C6DA)    // Bright cyan
+            PartOfSpeech.NUMBER -> Color(0xFF536DFE)      // Electric indigo ✅
+            PartOfSpeech.TIME -> Color(0xFF7E57C2)        // Medium violet
+            PartOfSpeech.WEATHER -> Color(0xFF29B6F6)     // Sky blue
+            PartOfSpeech.OTHER, null -> Color(0xFF8D6E63) // Warm taupe
 
         }
     }
