@@ -3,7 +3,7 @@ package com.example.hindivocab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
@@ -22,10 +22,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.hindivocab.presentation.Screen
 import com.example.hindivocab.presentation.VocabMainScreen
 import com.example.hindivocab.presentation.VocabViewModel
+import com.example.hindivocab.presentation.views.FilterChipsRow
 import com.example.hindivocab.ui.theme.HindiVocabTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -81,11 +84,21 @@ class MainActivity : ComponentActivity() {
                                     IconButton(onClick = { scope.launch { drawerState.open() } }) {
                                         Icon(Icons.Default.Menu, contentDescription = "Menu")
                                     }
-                                }
+                                },
+                                modifier = Modifier.shadow(4.dp)
                             )
                         }
                     ) { innerPadding ->
-                        Box(modifier = Modifier.padding(innerPadding)) {
+                        Column(modifier = Modifier.padding(innerPadding)) {
+                            // ✅ Only show filter chips on MAIN screen
+                            if (state.currentScreen == Screen.MAIN) {
+                                FilterChipsRow(
+                                    selectedFilter = state.selectedFilter,
+                                    onFilterSelected = { viewModel.setFilter(it) }
+                                )
+                            }
+
+                            // ✅ Main screen logic
                             VocabMainScreen(viewModel)
                         }
                     }
@@ -94,4 +107,5 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 

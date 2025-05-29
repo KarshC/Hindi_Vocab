@@ -32,6 +32,11 @@ fun VocabMainScreen(viewModel: VocabViewModel) {
                         onBack = { viewModel.onPreviousWord() }
                     )
                 }
+                if (state.currentWord == null) {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text("No words available", style = MaterialTheme.typography.headlineSmall)
+                    }
+                }
             }
 
             Screen.SAVED -> {

@@ -2,6 +2,7 @@ package com.example.hindivocab.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.hindivocab.domain.model.PartOfSpeech
 import com.example.hindivocab.domain.model.VocabWord
 import com.example.hindivocab.domain.usecase.VocabWordUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -33,7 +34,10 @@ class VocabViewModel @Inject constructor(
 
             useCases.getAllWordsUseCase().collect { words ->
                 if (wordList.isEmpty()) {
-                    wordList = words.shuffled()
+                    val currentFilter = _uiState.value.selectedFilter
+                    val filtered = currentFilter?.let { f -> words.filter { it.partOfSpeech == f } } ?: words
+
+                    wordList = filtered.shuffled()
                     _uiState.value = _uiState.value.copy(
                         currentWord = wordList.getOrNull(currentIndex),
                         isLoading = false,
@@ -42,6 +46,7 @@ class VocabViewModel @Inject constructor(
                 } else {
                     _uiState.value = _uiState.value.copy(allWords = words)
                 }
+
             }
         }
     }
@@ -111,5 +116,22 @@ class VocabViewModel @Inject constructor(
         }
     }
 
+    fun setFilter(filter: PartOfSpeech?) {
+        _uiState.value = _uiState.value.copy(selectedFilter = filter)
+
+        val filtered = if (filter != null) {
+            _uiState.value.allWords.filter { it.partOfSpeech == filter }
+        } else {
+            _uiState.value.allWords
+        }
+
+        wordList = filtered.shuffled()
+        currentIndex = 0
+
+        _uiState.value = _uiState.value.copy(
+            currentWord = wordList.getOrNull(currentIndex),
+            isFlipped = false // optional: reset flip on new filter
+        )
+    }
 
 }
