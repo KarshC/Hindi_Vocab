@@ -1,30 +1,30 @@
 [
   {
-    "hindiWord": "Joota",
+    "hindiWord": "जूता",
     "hinglishWord": "Joota",
     "meaning": "shoe",
     "partOfSpeech": "NOUN"
   },
   {
-    "hindiWord": "Kutta",
+    "hindiWord": "कुत्ता",
     "hinglishWord": "Kutta",
     "meaning": "dog",
     "partOfSpeech": "NOUN"
   },
   {
-    "hindiWord": "Kela",
+    "hindiWord": "केला",
     "hinglishWord": "Kela",
     "meaning": "banana",
     "partOfSpeech": "VERB"
   },
   {
-    "hindiWord": "Kamra",
+    "hindiWord": "कमरा",
     "hinglishWord": "Kamra",
     "meaning": "room",
     "partOfSpeech": "NOUN"
   },
   {
-    "hindiWord": "gadha",
+    "hindiWord": "गधा",
     "hinglishWord": "gadha",
     "meaning": "donkey",
     "partOfSpeech": "NOUN"
@@ -184,6 +184,858 @@
     "hinglishWord": "Dibiya",
     "meaning": "Little box",
     "partOfSpeech": "NOUN"
+  },
+  {
+    "hindiWord": "आ",
+    "hinglishWord": "aa",
+    "meaning": "come",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "बोल",
+    "hinglishWord": "bol",
+    "meaning": "speak",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "चल",
+    "hinglishWord": "chal",
+    "meaning": "walk",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "दे",
+    "hinglishWord": "de",
+    "meaning": "give",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "ढूँढ",
+    "hinglishWord": "dhundh",
+    "meaning": "search for",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "जा",
+    "hinglishWord": "ja",
+    "meaning": "go",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "खा",
+    "hinglishWord": "kha",
+    "meaning": "eat",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "ले",
+    "hinglishWord": "le",
+    "meaning": "take",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "पढ़",
+    "hinglishWord": "padh",
+    "meaning": "study",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "पका/बना",
+    "hinglishWord": "paka/bana",
+    "meaning": "cook",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "पी",
+    "hinglishWord": "pi",
+    "meaning": "drink",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "सो",
+    "hinglishWord": "so",
+    "meaning": "sleep",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "बात कर",
+    "hinglishWord": "Baat kar",
+    "meaning": "Talk",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "भाग",
+    "hinglishWord": "bhag",
+    "meaning": "run",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "चढ़",
+    "hinglishWord": "chad",
+    "meaning": "climb up",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "गा",
+    "hinglishWord": "ga",
+    "meaning": "sing",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "हँस",
+    "hinglishWord": "has",
+    "meaning": "laugh",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "काम कर",
+    "hinglishWord": "Kaam kar",
+    "meaning": "Work",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "खेल",
+    "hinglishWord": "khel",
+    "meaning": "play",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "मार",
+    "hinglishWord": "maar",
+    "meaning": "beat/kill",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "नाच",
+    "hinglishWord": "nach",
+    "meaning": "dance",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "पढ़ाई कर",
+    "hinglishWord": "Padhai kar",
+    "meaning": "Study",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "बेच",
+    "hinglishWord": "bech",
+    "meaning": "sell",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "कर",
+    "hinglishWord": "kar",
+    "meaning": "do",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "खत्म कर",
+    "hinglishWord": "Khatam kar",
+    "meaning": "Finish",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "कूद",
+    "hinglishWord": "kud",
+    "meaning": "jump",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "पूछ",
+    "hinglishWord": "puch",
+    "meaning": "ask",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "प्यार कर",
+    "hinglishWord": "Pyar kar",
+    "meaning": "Love",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "रो",
+    "hinglishWord": "ro",
+    "meaning": "cry",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "रुक",
+    "hinglishWord": "ruk",
+    "meaning": "stop",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "उतर",
+    "hinglishWord": "utar",
+    "meaning": "climb down",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "उठ",
+    "hinglishWord": "uth",
+    "meaning": "stand up/wake up/get up",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "आराम कर",
+    "hinglishWord": "Aram kar",
+    "meaning": "Rest",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "बंद कर",
+    "hinglishWord": "Band kar",
+    "meaning": "Close",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "बता",
+    "hinglishWord": "bata",
+    "meaning": "tell",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "बैठ",
+    "hinglishWord": "beth",
+    "meaning": "sit",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "धो",
+    "hinglishWord": "dho",
+    "meaning": "wash",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "हिल",
+    "hinglishWord": "hil",
+    "meaning": "move",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "खड़े हो",
+    "hinglishWord": "Khade ho",
+    "meaning": "Stand up",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "खरीद",
+    "hinglishWord": "khareed",
+    "meaning": "buy",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "कोशिश कर",
+    "hinglishWord": "Koshish kar",
+    "meaning": "Try",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "लड़ाई कर",
+    "hinglishWord": "Ladai kar",
+    "meaning": "Fight",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "मदद कर",
+    "hinglishWord": "Madad kar",
+    "meaning": "Help",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "मज़े कर",
+    "hinglishWord": "Maze kar",
+    "meaning": "Enjoy",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "नफ़रत कर",
+    "hinglishWord": "Nafrat kar",
+    "meaning": "Hate",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "नहाना",
+    "hinglishWord": "naha",
+    "meaning": "bath",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "साफ कर",
+    "hinglishWord": "Saaf kar",
+    "meaning": "Clean",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "समझ",
+    "hinglishWord": "samaj",
+    "meaning": "understand",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "शुरू कर",
+    "hinglishWord": "Shuru kar",
+    "meaning": "Start",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "सोच",
+    "hinglishWord": "soch",
+    "meaning": "think",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "सुन",
+    "hinglishWord": "sun",
+    "meaning": "hear",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "तैर",
+    "hinglishWord": "ter",
+    "meaning": "swim",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "अभ्यास कर",
+    "hinglishWord": "Abhyas kar",
+    "meaning": "Practice",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "फिसल",
+    "hinglishWord": "fisal",
+    "meaning": "slip",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "इंतज़ार कर",
+    "hinglishWord": "Intazar kar",
+    "meaning": "Wait",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "काट",
+    "hinglishWord": "kaat",
+    "meaning": "cut",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "मर",
+    "hinglishWord": "mar",
+    "meaning": "die",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "तैयार हो",
+    "hinglishWord": "Taiyar ho",
+    "meaning": "Get Ready",
+    "partOfSpeech": "VERB"
+  },
+  {
+    "hindiWord": "में",
+    "hinglishWord": "Mein",
+    "meaning": "In/Inside",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "पे / पर",
+    "hinglishWord": "Pe / Par",
+    "meaning": "On/At",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "से",
+    "hinglishWord": "Se",
+    "meaning": "From / With / By / To / Since / For",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के लिए",
+    "hinglishWord": "ke liye",
+    "meaning": "For",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "को",
+    "hinglishWord": "ko",
+    "meaning": "To",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के साथ",
+    "hinglishWord": "ke sath",
+    "meaning": "With",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के पास",
+    "hinglishWord": "ke paas",
+    "meaning": "Near to",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "की वजह से",
+    "hinglishWord": "ki vajah se",
+    "meaning": "Because of",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के बारे में",
+    "hinglishWord": "ke baare me",
+    "meaning": "About",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "से पहले",
+    "hinglishWord": "se pehle",
+    "meaning": "Before",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के बाद",
+    "hinglishWord": "ke baad",
+    "meaning": "After",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के ऊपर",
+    "hinglishWord": "ke upar",
+    "meaning": "Above",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के नीचे",
+    "hinglishWord": "ke neeche",
+    "meaning": "Below",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के आगे",
+    "hinglishWord": "ke aage",
+    "meaning": "Ahead",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के सामने",
+    "hinglishWord": "ke samne",
+    "meaning": "In front of",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के पीछे",
+    "hinglishWord": "ke peeche",
+    "meaning": "Behind",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के बीच में",
+    "hinglishWord": "ke beech me",
+    "meaning": "In between",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के दौरान",
+    "hinglishWord": "ke dauran",
+    "meaning": "During",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "के बिना",
+    "hinglishWord": "ke bina",
+    "meaning": "Without",
+    "partOfSpeech": "ADJECTIVE"
+  },
+  {
+    "hindiWord": "क्या",
+    "hinglishWord": "Kya",
+    "meaning": "what?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "क्यों / किसलिए",
+    "hinglishWord": "Kyon / Kisliye",
+    "meaning": "why?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "कौनसा / कौनसी / कौनसे",
+    "hinglishWord": "Konsa / Konsi / Konse",
+    "meaning": "which one?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "कहाँ / किधर",
+    "hinglishWord": "Kahan / Kidhar",
+    "meaning": "where?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "कैसा / कैसी / कैसे",
+    "hinglishWord": "Kaisa / Kaisi / Kaise",
+    "meaning": "how?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "कितना / कितनी",
+    "hinglishWord": "Kitna / Kitni",
+    "meaning": "how much?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "कितने / कितनी",
+    "hinglishWord": "Kitne / Kitni",
+    "meaning": "how many?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "कब",
+    "hinglishWord": "Kab",
+    "meaning": "when?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "कौन",
+    "hinglishWord": "Kon",
+    "meaning": "who?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "किसका",
+    "hinglishWord": "Kiska",
+    "meaning": "whose?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "किसे / किसको",
+    "hinglishWord": "Kise / Kisko",
+    "meaning": "whom?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "किसने",
+    "hinglishWord": "Kisne",
+    "meaning": "who?",
+    "partOfSpeech": "QUESTION"
+  },
+  {
+    "hindiWord": "एक",
+    "hinglishWord": "Ek",
+    "meaning": "1",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "दो",
+    "hinglishWord": "Do",
+    "meaning": "2",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "तीन",
+    "hinglishWord": "Teen",
+    "meaning": "3",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "चार",
+    "hinglishWord": "Chaar",
+    "meaning": "4",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "पाँच",
+    "hinglishWord": "Paach",
+    "meaning": "5",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "छह",
+    "hinglishWord": "Chhe",
+    "meaning": "6",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "सात",
+    "hinglishWord": "Saat",
+    "meaning": "7",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "आठ",
+    "hinglishWord": "Aath",
+    "meaning": "8",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "नौ",
+    "hinglishWord": "No",
+    "meaning": "9",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "दस",
+    "hinglishWord": "Das",
+    "meaning": "10",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "पहला",
+    "hinglishWord": "Pehla",
+    "meaning": "1st",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "दूसरा",
+    "hinglishWord": "Dusra",
+    "meaning": "2nd",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "तीसरा",
+    "hinglishWord": "Teesra",
+    "meaning": "3rd",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "चौथा",
+    "hinglishWord": "Chotha",
+    "meaning": "4th",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "पाँचवाँ",
+    "hinglishWord": "Paachva",
+    "meaning": "5th",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "छठा",
+    "hinglishWord": "Chhatta",
+    "meaning": "6th",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "सातवाँ",
+    "hinglishWord": "Saatva",
+    "meaning": "7th",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "आठवाँ",
+    "hinglishWord": "Aathva",
+    "meaning": "8th",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "नौवाँ",
+    "hinglishWord": "Nava",
+    "meaning": "9th",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "दसवाँ",
+    "hinglishWord": "Dasva",
+    "meaning": "10th",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "बीस",
+    "hinglishWord": "Bees",
+    "meaning": "20",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "तीस",
+    "hinglishWord": "Tees",
+    "meaning": "30",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "चालीस",
+    "hinglishWord": "Chaalis",
+    "meaning": "40",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "पचास",
+    "hinglishWord": "Pachaas",
+    "meaning": "50",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "साठ",
+    "hinglishWord": "Saath",
+    "meaning": "60",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "सत्तर",
+    "hinglishWord": "Sattar",
+    "meaning": "70",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "अस्सी",
+    "hinglishWord": "Assi",
+    "meaning": "80",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "नब्बे",
+    "hinglishWord": "Nabbe",
+    "meaning": "90",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "सौ",
+    "hinglishWord": "So",
+    "meaning": "100",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "हज़ार",
+    "hinglishWord": "Hazar",
+    "meaning": "1,000",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "दस हज़ार",
+    "hinglishWord": "Das Hazar",
+    "meaning": "10,000",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "लाख",
+    "hinglishWord": "Lakh",
+    "meaning": "1,00,000",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "दस लाख",
+    "hinglishWord": "Das Lakh",
+    "meaning": "10,00,000",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "करोड़",
+    "hinglishWord": "Crore",
+    "meaning": "1,00,00,000",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "दस करोड़",
+    "hinglishWord": "Das Crore",
+    "meaning": "10,00,00,000",
+    "partOfSpeech": "NUMBER"
+  },
+  {
+    "hindiWord": "पहले हफ्ते",
+    "hinglishWord": "Pehle hafte",
+    "meaning": "First week",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "पिछले हफ्ते",
+    "hinglishWord": "Pichle hafte",
+    "meaning": "Last week",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "इस हफ्ते",
+    "hinglishWord": "Is hafte",
+    "meaning": "This week",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "उस हफ्ते",
+    "hinglishWord": "Us hafte",
+    "meaning": "That week",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "अगले हफ्ते",
+    "hinglishWord": "Agle hafte",
+    "meaning": "Next week",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "दो हफ्ते पहले",
+    "hinglishWord": "Do hafte pehle",
+    "meaning": "2 weeks before",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "दो हफ्ते बाद",
+    "hinglishWord": "Do hafte baad",
+    "meaning": "2 weeks later",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "घंटा",
+    "hinglishWord": "Ghanta",
+    "meaning": "Hour",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "दिन",
+    "hinglishWord": "Din",
+    "meaning": "Day",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "हफ्ता",
+    "hinglishWord": "Hafta",
+    "meaning": "Week",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "महीना",
+    "hinglishWord": "Mahina",
+    "meaning": "Month",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "साल",
+    "hinglishWord": "Saal",
+    "meaning": "Year",
+    "partOfSpeech": "TIME"
+  },
+  {
+    "hindiWord": "धूप",
+    "hinglishWord": "dhoop",
+    "meaning": "sunshine",
+    "partOfSpeech": "WEATHER"
+  },
+  {
+    "hindiWord": "गर्मी",
+    "hinglishWord": "garmi",
+    "meaning": "hot",
+    "partOfSpeech": "WEATHER"
+  },
+  {
+    "hindiWord": "ठंड",
+    "hinglishWord": "thand",
+    "meaning": "cold",
+    "partOfSpeech": "WEATHER"
+  },
+  {
+    "hindiWord": "बारिश हो रही",
+    "hinglishWord": "barish ho rahi",
+    "meaning": "it is raining",
+    "partOfSpeech": "WEATHER"
+  },
+  {
+    "hindiWord": "बादल",
+    "hinglishWord": "badal",
+    "meaning": "cloud",
+    "partOfSpeech": "WEATHER"
+  },
+  {
+    "hindiWord": "मौसम",
+    "hinglishWord": "mausam",
+    "meaning": "weather",
+    "partOfSpeech": "WEATHER"
   }
 ]
 

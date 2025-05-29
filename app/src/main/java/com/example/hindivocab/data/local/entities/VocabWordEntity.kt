@@ -12,6 +12,6 @@ data class VocabWordEntity(
     val highlishWord: String?,
     val meaning: String?,
     val isSaved: Boolean?,
-    val partOfSpeech: PartOfSpeech?,
+    val partOfSpeech: PartOfSpeech,
     val hasBeenShown: Boolean?
 )

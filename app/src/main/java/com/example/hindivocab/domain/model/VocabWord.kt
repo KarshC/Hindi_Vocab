@@ -14,6 +14,10 @@ enum class PartOfSpeech {
     NOUN,
     VERB,
     ADJECTIVE,
+    QUESTION,
+    NUMBER,
+    TIME,
+    WEATHER,
     ADVERB,
     PREPOSITION,
     OTHER
