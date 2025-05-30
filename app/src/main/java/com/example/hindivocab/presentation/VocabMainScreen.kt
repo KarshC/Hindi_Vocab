@@ -26,12 +26,12 @@ fun VocabMainScreen(viewModel: VocabViewModel) {
                     FlipCardScreen(
                         word = it,
                         isFlipped = state.isFlipped,
-                        showHinglish = state.showHinglish,
+                        showHinglish = it.id !in state.visibleHinglishWordIds,
                         onCardClick = { viewModel.onFlipCard() },
                         onSaveToggle = { viewModel.onToggleSave(it) },
                         onNext = { viewModel.onNextWord() },
                         onBack = { viewModel.onPreviousWord() },
-                        onHinglishToggle = { viewModel.toggleHinglish() }
+                        onHinglishToggle = { viewModel.toggleHinglish(wordId = it.id) }
                     )
                 }
                 if (state.currentWord == null) {

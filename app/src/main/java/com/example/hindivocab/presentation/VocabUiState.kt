@@ -14,6 +14,7 @@ data class VocabUiState(
     val selectedFilter: PartOfSpeech? = null,
     val filteredWords: List<VocabWord> = emptyList(),
     val showHinglish: Boolean = true,
+    val visibleHinglishWordIds: Set<Int> = emptySet(),
 )
 
 enum class Screen {

@@ -35,7 +35,8 @@ class VocabViewModel @Inject constructor(
             useCases.getAllWordsUseCase().collect { words ->
                 if (wordList.isEmpty()) {
                     val currentFilter = _uiState.value.selectedFilter
-                    val filtered = currentFilter?.let { f -> words.filter { it.partOfSpeech == f } } ?: words
+                    val filtered =
+                        currentFilter?.let { f -> words.filter { it.partOfSpeech == f } } ?: words
 
                     wordList = filtered.shuffled()
                     _uiState.value = _uiState.value.copy(
@@ -145,7 +146,13 @@ class VocabViewModel @Inject constructor(
         }
     }
 
-    fun toggleHinglish() {
-        _uiState.value = _uiState.value.copy(showHinglish = !_uiState.value.showHinglish)
+    fun toggleHinglish(wordId: Int) {
+        val current = _uiState.value.visibleHinglishWordIds
+        val updated = if (wordId in current) {
+            current - wordId
+        } else {
+            current + wordId
+        }
+        _uiState.value = _uiState.value.copy(visibleHinglishWordIds = updated)
     }
 }
