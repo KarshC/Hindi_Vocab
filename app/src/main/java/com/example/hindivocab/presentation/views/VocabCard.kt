@@ -19,6 +19,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -44,8 +46,10 @@ fun VocabCard(
     word: VocabWord,
     isFlipped: Boolean,
     cardColor: Color,
+    showHinglish: Boolean = true,
     onClick: () -> Unit,
-    onSaveToggle: () -> Unit
+    onSaveToggle: () -> Unit,
+    onHinglishToggle: () -> Unit,
 ) {
     val rotation = animateFloatAsState(
         targetValue = if (isFlipped) 180f else 0f,
@@ -76,12 +80,14 @@ fun VocabCard(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(
-                    text = word.hinglishWord,
-                    style = MaterialTheme.typography.headlineLarge,
-                    color = Color.Black,
-                    textAlign = TextAlign.Center
-                )
+                if (showHinglish) {
+                    Text(
+                        text = word.hinglishWord,
+                        style = MaterialTheme.typography.headlineLarge,
+                        color = Color.Black,
+                        textAlign = TextAlign.Center
+                    )
+                }
                 Text(
                     text = word.hindiWord,
                     style = MaterialTheme.typography.headlineLarge,
@@ -114,6 +120,20 @@ fun VocabCard(
                 tint = Color.Red
             )
         }
+
+        IconButton(
+            onClick = onHinglishToggle,
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .offset(x = (-4).dp, y = (-4).dp)
+        ) {
+            Icon(
+                modifier = Modifier.size(32.dp),
+                imageVector = if (showHinglish) Icons.Default.Visibility else Icons.Default.VisibilityOff,
+                contentDescription = if (showHinglish) "Hide Hinglish" else "Show Hinglish",
+                tint = Color.White
+            )
+        }
     }
 }
 
@@ -124,8 +144,10 @@ fun FlipCardPreview() {
         word = PREVIEW_WORD,
         isFlipped = false,
         cardColor = Utils().getCardColor(PREVIEW_WORD.partOfSpeech),
-        onClick = {  },
+        onClick = { },
         onSaveToggle = { },
+        showHinglish = true,
+        onHinglishToggle = { },
     )
 }
 
