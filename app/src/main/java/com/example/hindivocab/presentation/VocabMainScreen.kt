@@ -63,8 +63,8 @@ fun VocabMainScreen(viewModel: VocabViewModel) {
                 } else {
                     WordsListScreen(
                         words = state.filteredWords.shuffled(),
-                        savedWords = true,
-                        onToggleSave = { viewModel.onToggleSave(it) }
+                        savedWords = false,
+                        onToggleSave = { }
                     )
                 }
             }

@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -21,8 +20,6 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -107,33 +104,26 @@ fun VocabCard(
             )
         }
 
-        IconButton(
+        AnimatedIconButton(
             onClick = onSaveToggle,
+            icon = if (word.isSaved) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+            contentDescription = if (word.isSaved) "Unsave" else "Save",
+            tint = Color.Red,
             modifier = Modifier
                 .align(Alignment.TopEnd)
                 .offset(x = (-4).dp, y = 4.dp)
-        ) {
-            Icon(
-                modifier = Modifier.size(32.dp),
-                imageVector = if (word.isSaved) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                contentDescription = if (word.isSaved) "Saved" else "Save",
-                tint = Color.Red
-            )
-        }
+        )
 
-        IconButton(
+        AnimatedIconButton(
             onClick = onHinglishToggle,
+            icon = if (showHinglish) Icons.Default.Visibility else Icons.Default.VisibilityOff,
+            contentDescription = if (showHinglish) "Hide Hinglish" else "Show Hinglish",
+            tint = Color.White,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .offset(x = (-4).dp, y = (-4).dp)
-        ) {
-            Icon(
-                modifier = Modifier.size(32.dp),
-                imageVector = if (showHinglish) Icons.Default.Visibility else Icons.Default.VisibilityOff,
-                contentDescription = if (showHinglish) "Hide Hinglish" else "Show Hinglish",
-                tint = Color.White
-            )
-        }
+        )
+
     }
 }
 
