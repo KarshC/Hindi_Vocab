@@ -2,8 +2,11 @@ package com.example.hindivocab.presentation.views
 
 
 import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -23,6 +26,7 @@ import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -37,7 +41,6 @@ import com.example.hindivocab.domain.model.VocabWord
 import com.example.hindivocab.presentation.PREVIEW_WORD
 import com.example.hindivocab.utils.Utils
 
-
 @Composable
 fun VocabCard(
     word: VocabWord,
@@ -48,11 +51,22 @@ fun VocabCard(
     onSaveToggle: () -> Unit,
     onHinglishToggle: () -> Unit,
 ) {
-    val rotation = animateFloatAsState(
-        targetValue = if (isFlipped) 180f else 0f,
-        animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing),
-        label = "CardFlip"
-    )
+
+    val transition = updateTransition(targetState = isFlipped, label = "CardFlipTransition")
+
+    val rotationY by transition.animateFloat(
+        transitionSpec = {
+            spring(dampingRatio = Spring.DampingRatioMediumBouncy, stiffness = Spring.StiffnessLow)
+        },
+        label = "RotationY"
+    ) { flipped -> if (flipped) 180f else 0f }
+
+    val scale by transition.animateFloat(
+        transitionSpec = {
+            tween(durationMillis = 300, easing = FastOutSlowInEasing)
+        },
+        label = "Scale"
+    ) { flipped -> if (flipped) 0.97f else 1f }
 
     val cameraDistance = 32f * LocalDensity.current.density
 
@@ -61,8 +75,10 @@ fun VocabCard(
             .width(300.dp)
             .height(300.dp)
             .graphicsLayer {
-                rotationY = rotation.value
+                this.rotationY = rotationY
                 this.cameraDistance = cameraDistance
+                this.scaleX = scale
+                this.scaleY = scale
             }
             .clip(RoundedCornerShape(16.dp))
             .background(cardColor)
@@ -71,7 +87,7 @@ fun VocabCard(
             .padding(8.dp),
         contentAlignment = Alignment.Center
     ) {
-        if (rotation.value <= 90f) {
+        if (rotationY <= 90f) {
             Column(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
@@ -87,8 +103,14 @@ fun VocabCard(
                 }
                 Text(
                     text = word.hindiWord,
-                    style = MaterialTheme.typography.headlineLarge,
-                    color = Color.Black,
+                    style = if (showHinglish) MaterialTheme.typography.headlineMedium else MaterialTheme.typography.headlineLarge,
+                    color = if (showHinglish) Color.DarkGray else Color.Black,
+                    textAlign = TextAlign.Center
+                )
+                Text(
+                    text = word.partOfSpeech.name,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = Color.DarkGray,
                     textAlign = TextAlign.Center
                 )
             }
@@ -99,7 +121,7 @@ fun VocabCard(
                 color = Color.Black,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.graphicsLayer {
-                    rotationY = 180f
+                    this.rotationY = 180f
                 }
             )
         }
