@@ -115,6 +115,7 @@ class VocabViewModel @Inject constructor(
                 savedWords = updatedSaved,
                 allWords = updatedAll
             )
+            applyFilterToCurrentScreen(false)
         }
     }
 
@@ -123,7 +124,7 @@ class VocabViewModel @Inject constructor(
         applyFilterToCurrentScreen()
     }
 
-    private fun applyFilterToCurrentScreen() {
+    private fun applyFilterToCurrentScreen(resetMainWordList: Boolean = true) {
         val filter = _uiState.value.selectedFilter
         val source = when (_uiState.value.currentScreen) {
             Screen.SAVED -> _uiState.value.savedWords
@@ -139,12 +140,13 @@ class VocabViewModel @Inject constructor(
 
         _uiState.value = _uiState.value.copy(filteredWords = filtered)
 
-        if (_uiState.value.currentScreen == Screen.MAIN) {
+        if (_uiState.value.currentScreen == Screen.MAIN && resetMainWordList) {
             wordList = filtered.shuffled()
             currentIndex = 0
             _uiState.value = _uiState.value.copy(currentWord = wordList.getOrNull(currentIndex))
         }
     }
+
 
     fun toggleHinglish(wordId: Int) {
         val current = _uiState.value.visibleHinglishWordIds
