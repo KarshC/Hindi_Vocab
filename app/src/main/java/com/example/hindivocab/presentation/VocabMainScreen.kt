@@ -31,7 +31,9 @@ fun VocabMainScreen(viewModel: VocabViewModel) {
                         onSaveToggle = { viewModel.onToggleSave(it) },
                         onNext = { viewModel.onNextWord() },
                         onBack = { viewModel.onPreviousWord() },
-                        onHinglishToggle = { viewModel.toggleHinglish(wordId = it.id) }
+                        onHinglishToggle = { viewModel.toggleHinglish(wordId = it.id) },
+                        isAtFirst = viewModel.isAtFirstWord(),
+                        isAtLast = viewModel.isAtLastWord()
                     )
                 }
                 if (state.currentWord == null) {

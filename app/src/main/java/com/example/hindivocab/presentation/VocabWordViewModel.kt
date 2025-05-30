@@ -157,4 +157,7 @@ class VocabViewModel @Inject constructor(
         }
         _uiState.value = _uiState.value.copy(visibleHinglishWordIds = updated)
     }
+
+    fun isAtFirstWord(): Boolean = currentIndex <= 0
+    fun isAtLastWord(): Boolean = currentIndex >= wordList.lastIndex
 }

@@ -8,14 +8,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hindivocab.domain.model.VocabWord
@@ -32,6 +27,8 @@ fun FlipCardScreen(
     onNext: () -> Unit,
     onBack: () -> Unit,
     onHinglishToggle: () -> Unit,
+    isAtFirst: Boolean,
+    isAtLast: Boolean,
 ) {
     val baseCardColor = Utils().getCardColor(word.partOfSpeech)
     val backgroundColor = baseCardColor.copy(alpha = 0.5f)
@@ -60,18 +57,18 @@ fun FlipCardScreen(
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Button(
+                AnimatedButton(
+                    text = "Back",
                     onClick = onBack,
-                    colors = ButtonDefaults.buttonColors(containerColor = cardColor)
-                ) {
-                    Text("Back", color = Color.Black, style = MaterialTheme.typography.headlineSmall)
-                }
-                Button(
+                    enabled = !isAtFirst,
+                    color = cardColor
+                )
+                AnimatedButton(
+                    text = "Next",
                     onClick = onNext,
-                    colors = ButtonDefaults.buttonColors(containerColor = cardColor)
-                ) {
-                    Text("Next", color = Color.Black, style = MaterialTheme.typography.headlineSmall)
-                }
+                    enabled = !isAtLast,
+                    color = cardColor
+                )
             }
         }
     }
@@ -89,7 +86,9 @@ fun PreviewFlipCardScreen() {
         onNext = { },
         onBack = { },
         showHinglish = true,
-        onHinglishToggle = { }
+        onHinglishToggle = { },
+        isAtFirst = false,
+        isAtLast = false
     )
 }
 
