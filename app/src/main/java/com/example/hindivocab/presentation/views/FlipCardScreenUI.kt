@@ -26,10 +26,12 @@ import com.example.hindivocab.utils.Utils
 fun FlipCardScreen(
     word: VocabWord,
     isFlipped: Boolean,
+    showHinglish: Boolean,
     onCardClick: () -> Unit,
     onSaveToggle: () -> Unit,
     onNext: () -> Unit,
-    onBack: () -> Unit
+    onBack: () -> Unit,
+    onHinglishToggle: () -> Unit,
 ) {
     val baseCardColor = Utils().getCardColor(word.partOfSpeech)
     val backgroundColor = baseCardColor.copy(alpha = 0.5f)
@@ -49,7 +51,9 @@ fun FlipCardScreen(
                 isFlipped = isFlipped,
                 cardColor = cardColor,
                 onClick = onCardClick,
-                onSaveToggle = onSaveToggle
+                onSaveToggle = onSaveToggle,
+                showHinglish = showHinglish,
+                onHinglishToggle = onHinglishToggle
             )
             Spacer(modifier = Modifier.height(24.dp))
             Row(
@@ -83,7 +87,9 @@ fun PreviewFlipCardScreen() {
         onCardClick = {},
         onSaveToggle = {},
         onNext = { },
-        onBack = { }
+        onBack = { },
+        showHinglish = true,
+        onHinglishToggle = { }
     )
 }
 

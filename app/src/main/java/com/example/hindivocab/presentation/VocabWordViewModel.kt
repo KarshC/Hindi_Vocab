@@ -145,6 +145,7 @@ class VocabViewModel @Inject constructor(
         }
     }
 
-
-
+    fun toggleHinglish() {
+        _uiState.value = _uiState.value.copy(showHinglish = !_uiState.value.showHinglish)
+    }
 }
