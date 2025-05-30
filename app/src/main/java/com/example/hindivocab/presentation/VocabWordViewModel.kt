@@ -95,12 +95,12 @@ class VocabViewModel @Inject constructor(
             val updated = word.copy(isSaved = !word.isSaved)
             useCases.saveWordUseCase(updated)
 
-            // If this is the currentWord, update it too
+            // Update currentWord if it matches
             if (_uiState.value.currentWord?.id == updated.id) {
                 _uiState.value = _uiState.value.copy(currentWord = updated)
             }
 
-            // Force update savedWords list for immediate UI feedback
+            // Update saved and allWords in UI state
             val updatedSaved = if (updated.isSaved) {
                 _uiState.value.savedWords + updated
             } else {
@@ -111,11 +111,19 @@ class VocabViewModel @Inject constructor(
                 if (it.id == updated.id) updated else it
             }
 
+            // ✅ Update wordList used for navigation
+            wordList = wordList.map {
+                if (it.id == updated.id) updated else it
+            }
+
+            // ✅ Also reassign currentWord from updated wordList
             _uiState.value = _uiState.value.copy(
                 savedWords = updatedSaved,
-                allWords = updatedAll
+                allWords = updatedAll,
+                currentWord = wordList.getOrNull(currentIndex)
             )
-            applyFilterToCurrentScreen(false)
+
+            applyFilterToCurrentScreen(resetMainWordList = false)
         }
     }
 
